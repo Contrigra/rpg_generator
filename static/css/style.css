@@ -2,14 +2,14 @@
 
 @font-face {
     font-family: "VollkornSC";
-    src: url("../fonts/VollkornSC-Bold-700.ttf") format('ttf');
+    src: url("../fonts/VollkornSC-Bold-700.ttf") format('truetype');
     font-style: normal;
     font-weight: 700; 
   }
   
   @font-face {
     font-family: "VollkornSC";
-    src: url("../fonts/VollkornSC-Regular-400.ttf") format('woff');
+    src: url("../fonts/VollkornSC-Regular-400.ttf") format('truetype');
     font-style: normal;
     font-weight: 400;
   }
@@ -17,4 +17,31 @@
   body {
       font-family: "VollkornSC";
       font-weight: 400;
+      color: #470315;
+      background-color: #FFFBEB;
+      padding: 30px;
   }
+
+/* .submit-container {
+  display: flex;
+  
+} */
+  .headings-container {
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+  }
+
+  input[type=submit] {
+    background-color: #470315;
+    color: #FFFBEB;
+    border-color: #470315;
+    width: 340px;
+    height: 5vw;
+  
+  }
+
+  p {
+    width: 148px;
+  }
+  
