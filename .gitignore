@@ -1,7 +1,3 @@
 .venv
 db.sqlite3
-rpg_generator/__pycache__/urls.cpython-310.pyc
-rpg_generator/__pycache__/wsgi.cpython-310.pyc
-knave/__pycache__/__init__.cpython-310.pyc
-knave/__pycache__/urls.cpython-310.pyc
-knave/__pycache__/views.cpython-310.pyc
+/.vscode/
