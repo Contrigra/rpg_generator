@@ -22,8 +22,21 @@
       padding: 30px;
   }
 
+  .character-info-output-container {
+    margin-top: 2em;
+  }
+
   .character-info-output-container > * {
     display: flex;
+  
+  }
+
+  .character-info-output-container > * > p:nth-child(3) {
+    border-right: none;
+  }
+
+  .headings-container {
+    margin-top: 2em;
   }
 
   input[type=submit] {
@@ -31,13 +44,15 @@
     color: #FFFBEB;
     border-color: #470315;
     width: 340px;
-    height: 30px;
+    height: 40px;
   
   }
 
   p {
     width: 200px;
     border-right: 1px #470315 solid;
+    line-height: 20px;
+    margin-left: 10px;
   }
 
   .hit-points-container {
@@ -45,7 +60,7 @@
   
   }
 
-  .name-container, .headings-container, .armor-container,  .hit-points-container{
+  .name-container, .headings-container, .hit-points-container{
     font-size: 18px;
   }
 
