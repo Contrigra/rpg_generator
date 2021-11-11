@@ -10,7 +10,7 @@ class Trait(models.Model):
 
 class Name(models.Model):
     """Simple Character name model"""
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
 
 
 class Item(models.Model):
