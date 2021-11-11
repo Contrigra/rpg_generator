@@ -22,14 +22,8 @@
       padding: 30px;
   }
 
-/* .submit-container {
-  display: flex;
-  
-} */
-  .headings-container {
+  .character-info-output-container > * {
     display: flex;
-    width: 400px;
-    justify-content: space-between;
   }
 
   input[type=submit] {
@@ -37,11 +31,28 @@
     color: #FFFBEB;
     border-color: #470315;
     width: 340px;
-    height: 5vw;
+    height: 30px;
   
   }
 
   p {
-    width: 148px;
+    width: 200px;
+    border-right: 1px #470315 solid;
   }
+
+  .hit-points-container {
+    display: flex;
+  
+  }
+
+  .name-container, .headings-container, .armor-container,  .hit-points-container{
+    font-size: 18px;
+  }
+
+  .hit-points-container {
+    margin-top: 2em;
+  }
+
+
+
   
