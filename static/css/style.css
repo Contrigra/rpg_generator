@@ -1,0 +1,73 @@
+@import url(normalize.css);
+
+@font-face {
+    font-family: "VollkornSC";
+    src: url("../fonts/VollkornSC-Bold-700.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 700; 
+  }
+  
+  @font-face {
+    font-family: "VollkornSC";
+    src: url("../fonts/VollkornSC-Regular-400.ttf") format('truetype');
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  body {
+      font-family: "VollkornSC";
+      font-weight: 400;
+      color: #470315;
+      background-color: #FFFBEB;
+      padding: 30px;
+  }
+
+  .character-info-output-container {
+    margin-top: 2em;
+  }
+
+  .character-info-output-container > * {
+    display: flex;
+  
+  }
+
+  .character-info-output-container > * > p:nth-child(3) {
+    border-right: none;
+  }
+
+  .headings-container {
+    margin-top: 2em;
+  }
+
+  input[type=submit] {
+    background-color: #470315;
+    color: #FFFBEB;
+    border-color: #470315;
+    width: 340px;
+    height: 40px;
+  
+  }
+
+  p {
+    width: 200px;
+    border-right: 1px #470315 solid;
+    line-height: 20px;
+    margin-left: 10px;
+  }
+
+  .hit-points-container {
+    display: flex;
+  
+  }
+
+  .name-container, .headings-container, .hit-points-container{
+    font-size: 18px;
+  }
+
+  .hit-points-container {
+    margin-top: 2em;
+  }
+
+
+
+  
