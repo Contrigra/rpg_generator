@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'taggit',
     'knave',
     'users',
+    'rest_framework',
 
 ]
 
