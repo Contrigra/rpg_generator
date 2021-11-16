@@ -1,4 +1,5 @@
 import random
+from knave.models import Name
 
 
 class Character:
@@ -12,16 +13,28 @@ class Character:
         return
 
     def _generate_stats(self) -> dict:
-        """Returns a dict with stat name as a key and its value
+        """Returns a dict with stat names as a key and its value
 
         By the rules a stat equals the worst rolled dice out of 3"""
-        stats = {'strength': None, 'dexterity': None, 'constitution': None,
-                 'intelligence': None, 'wisdom': None, 'charisma': None}
+        self.stats = {'strength': None, 'dexterity': None, 'constitution':
+            None,
+                      'intelligence': None, 'wisdom': None, 'charisma': None}
 
-        for key in stats:
+        for key in self.stats:
             sequence = []
             for _ in range(3):
                 sequence.append(random.randint(1, 6))
-            stats[key] = min(sequence)
+            self.stats[key] = min(sequence)
 
-        return stats
+        return self.stats
+
+    # TODO generate HP
+
+    # TODO traits
+
+
+def get_random_name() -> str:
+    names = list(Name.objects.all())
+
+    return random.sample(names, 1)[0].name
+
