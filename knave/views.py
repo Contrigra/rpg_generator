@@ -1,12 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-import datetime
+from django.http import HttpResponse, JsonResponse
+from .utils import Character
 # Create your views here.
 
 
 def generate_character(request):
     # TODO return a complete character as json.
 
-    now = datetime.datetime.now()
-    html = "<html><body>It is now %s.</body></html>" % now
-    return HttpResponse(html)
+    char = Character()
+
+    html = f"<html><body>{char.stats}</body></html>"
+    return JsonResponse(char.stats)

@@ -1,3 +1,7 @@
+from knave.models import Name
+from django.core.management.base import BaseCommand, CommandError
+
+
 traits = {'Body':
               ['Атлетичное', 'Мускулистое', 'Тучное', 'Изящное', 'Костлявое',
                'Громадное',
@@ -88,14 +92,20 @@ traits = {'Body':
                'Отвергнут',
                'Заменён', 'Ограблен', 'Подозреваемый']}
 
-names = []
-with open('names.txt', 'r', encoding='utf8') as f:
-    names_list_dirty = f.readlines()
-    for item in names_list_dirty:
-        item = item.strip('\n')
-        names.append(item)
 
-print(names)
-def populate_game_data():
-    ...
+
+class Command(BaseCommand):
+    help = 'Populates DB with starting data'
+
+    def handle(self, *args, **options):
+        with open('knave/management/commands/names.txt', 'r',
+                  encoding='utf8') as f:
+            names_list_dirty = f.readlines()
+            for item in names_list_dirty:
+                item = item.strip('\n')
+                Name.objects.get_or_create(name=item)
+
+
+
+
     # TODO command to populate sql database with initial data
