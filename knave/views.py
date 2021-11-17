@@ -6,9 +6,9 @@ from knave.serializers import CharacterSerializer
 
 def generate_character(request):
     # TODO return a complete character as json.
+    # TODO Traits
 
-    name = get_random_name()
-    char = Character(name)
+    char = Character()
     char = CharacterSerializer(char)
 
     return JsonResponse(char.data)
