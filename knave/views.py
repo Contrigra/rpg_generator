@@ -1,7 +1,6 @@
-from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse
 from .utils import Character, get_random_name
-from serializers import CharacterSerializer
+from knave.serializers import CharacterSerializer
 # Create your views here.
 
 

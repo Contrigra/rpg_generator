@@ -3,11 +3,15 @@ from knave.models import Name
 
 
 class Character:
-    def __init__(self, name: str, stats: dict = None, armour: int = None):
+    def __init__(self, name: str, stats: dict = None, armour: int = None,
+                 health: int = None):
         self.stats = stats if stats is not None else self._generate_stats()
         # unique stat, which is defined by armour items
         self.armour = armour
         self.name = name
+
+        # 1 level characters start with from 1 to 8 hp
+        self.health = health if health is not None else random.randint(1, 8)
 
     def __str__(self):
         return
