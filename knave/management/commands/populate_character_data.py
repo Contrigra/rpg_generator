@@ -1,4 +1,4 @@
-from knave.models import Name
+from knave.models import Name, Trait
 from django.core.management.base import BaseCommand, CommandError
 
 
@@ -105,7 +105,10 @@ class Command(BaseCommand):
                 item = item.strip('\n')
                 Name.objects.get_or_create(name=item)
 
+    for keys, values in traits.items():
+        print(f'\n{keys}')
+        for item in values:
+            trait = Trait.objects.get_or_create(title=item)
+            trait[0].tags.add(f'{keys}')
 
-
-
-    # TODO command to populate sql database with initial data
+    # TODO ? Loading items?

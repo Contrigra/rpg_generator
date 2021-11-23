@@ -7,6 +7,7 @@ class CharacterSerializer(serializers.Serializer):
     name = CharField(max_length=50)
     health = IntegerField()
     stats = DictField()
+    traits = DictField()
 
 
-    #TODO other fields
+    #TODO starting inventory
