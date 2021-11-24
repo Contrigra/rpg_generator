@@ -8,14 +8,17 @@ var DATA = JSON.parse(json); // const url = '';
 // xhr.open('GET', url, false);
 // xhr.send();
 // let DATA = JSON.parse(xhr.responseText);
-// const bonusOutputCells = document.querySelectorAll('p[class$="bonus-output"]');
 
 var nameOutput = document.querySelector('.name-container__output');
-nameOutput.textContent = DATA.name;
+var button = document.querySelector('.button');
+var healthOutput = document.querySelector('.armor-container__max-output');
 
-for (key in DATA.stats) {
-  document.querySelector('.' + key + '-container__bonus-output').textContent = DATA.stats[key];
-} // for (let i = 0; i < 6; i++) {
-//     bonusOutputCells[i].textContent = DATA.stats.i;
-// }
-// bonusOutputCells[0].textContent = DATA.stats.strength;
+button.onclick = function (element) {
+  element.preventDefault();
+  nameOutput.textContent = DATA.name;
+  healthOutput.textContent = DATA.health;
+
+  for (key in DATA.stats) {
+    document.querySelector('.' + key + '-container__bonus-output').textContent = DATA.stats[key];
+  }
+};

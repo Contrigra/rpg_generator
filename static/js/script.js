@@ -10,21 +10,23 @@ let DATA = JSON.parse(json);
 // xhr.send();
 // let DATA = JSON.parse(xhr.responseText);
 
-// const bonusOutputCells = document.querySelectorAll('p[class$="bonus-output"]');
 
 const nameOutput = document.querySelector('.name-container__output');
+const button = document.querySelector('.button');
+const healthOutput = document.querySelector('.armor-container__max-output');
 
-nameOutput.textContent = DATA.name; 
+button.onclick = function(element) {
+    element.preventDefault();
 
-for (key in DATA.stats) {
-    document.querySelector('.'+ key +'-container__bonus-output').textContent = DATA.stats[key];
+    nameOutput.textContent = DATA.name; 
+    healthOutput.textContent = DATA.health;
+
+    for (key in DATA.stats) {
+        document.querySelector('.'+ key +'-container__bonus-output').textContent = DATA.stats[key];
+        
+    }
 }
 
 
 
 
-// for (let i = 0; i < 6; i++) {
-//     bonusOutputCells[i].textContent = DATA.stats.i;
-// }
-
-// bonusOutputCells[0].textContent = DATA.stats.strength;
