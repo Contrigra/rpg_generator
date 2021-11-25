@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.db import models
-from rest_framework.fields import DictField, CharField, IntegerField
+from rest_framework.fields import DictField, CharField, IntegerField, ListField
 
 
 class CharacterSerializer(serializers.Serializer):
@@ -8,6 +8,7 @@ class CharacterSerializer(serializers.Serializer):
     health = IntegerField()
     stats = DictField()
     traits = DictField()
+    inventory = ListField()
 
 
     #TODO starting inventory
