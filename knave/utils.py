@@ -2,12 +2,15 @@ import random
 from knave.models import Name, Trait
 
 
-# TODO inventory
+# TODO inventory generate
 class Character:
     def __init__(
             self, name: str = None, stats: dict = None, armour: int =
-            None, health: int = None, traits: dict = None):
+            None, health: int = None, traits: dict = None, inventory: list =
+            None):
+        self.stats = stats
 
+        self.stats = stats
         self.stats = stats if stats is not None else self._generate_stats()
         self.name = name if name is not None else self._get_random_name()
         # 1 level characters start with from 1 to 8 hp
@@ -15,9 +18,9 @@ class Character:
         self.traits = traits if traits is not None else \
             self._get_random_traits()
         # Unique stat which depends on defence items
-        # TODO armor
-        self.armour = armour
 
+        self.armour = armour
+        self.inventory = inventory if traits is not None else self._get_random_inventory()
         # TODO inventory
 
     def __str__(self):
@@ -57,3 +60,41 @@ class Character:
             traits[key] = new_trait
 
         return traits
+
+    def _get_random_inventory(self) -> list:
+        """Returns a list of the chracter's items from three random tables"""
+
+        items_1 = [('Веревка', 50, 'фт'), 'Шкивы', ('Свечи', 5),
+                   ('Цепь, 10', 'фт'),
+                   ('Мел', 10),
+                   "Ломик", "Спички", "Крюк-кошка", "Молоток", "Фляга",
+                   "Фонарь",
+                   "Лампадное масло", "Замок", "Кандалы", "Зеркало",
+                   ("Шест", 10, "фт"), "Мешок", "Палатка", ("Колья", 5),
+                   ("Факелы", 5)
+                   ]
+        items_2 = [('Шест', 10, "фт"), "Мешок", "Палатка", ("Колья", 5),
+                   ("Факелы",
+                    5),
+                   "Пила", "Ведро", "Ёжики", "Зубило", "Сверло", "Удочка",
+                   "Мраморные шарики", "Клей", "Кирка", "Песочные часы",
+                   "Сеть",
+                   "Клещи", "Отмычки", "Железный Футляр", "Гвозди"]
+        items_3 = ["Благовония", "Губка", "Линзы", "Духи", "Горн", "Бутыль",
+                   "Мыло",
+                   "Подзорная Труба", "Смола", "Нитки",
+                   "Поддельные драг.камни",
+                   "Книга (чистая)", "Колода карт", "Набор кубиков",
+                   "Горшок для "
+                   "готовки",
+                   "Грим", "Свисток", "Муз.инструмент", "Перо и чернила",
+                   "Колокольчик"]
+
+        inventory = []
+
+        # First table is unique, as you should obtain two random items from it
+        inventory.append(random.sample(items_1, 2))
+        inventory.append(random.sample(items_2, 1))
+        inventory.append(random.sample(items_3, 1))
+
+        return inventory

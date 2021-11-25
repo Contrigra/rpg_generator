@@ -1,7 +1,6 @@
 from knave.models import Name, Trait
 from django.core.management.base import BaseCommand, CommandError
 
-
 traits = {'Body':
               ['Атлетичное', 'Мускулистое', 'Тучное', 'Изящное', 'Костлявое',
                'Громадное',
@@ -105,10 +104,10 @@ class Command(BaseCommand):
                 item = item.strip('\n')
                 Name.objects.get_or_create(name=item)
 
+    print('Loading traits:')
     for keys, values in traits.items():
         print(f'\n{keys}')
         for item in values:
             trait = Trait.objects.get_or_create(title=item)
             trait[0].tags.add(f'{keys}')
 
-    # TODO ? Loading items?
