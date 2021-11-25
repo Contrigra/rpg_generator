@@ -1,7 +1,10 @@
 
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('create_character/', views.generate_character, name='create_character'),
+    path('create_character/', views.character_page, name='character_page'),
+    path('create_character/generate', views.generate_character,
+         name='create_character'),
+
 ]

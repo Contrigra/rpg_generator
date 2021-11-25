@@ -1,11 +1,14 @@
 from django.http import JsonResponse
 from .utils import Character
 from knave.serializers import CharacterSerializer
+from django.views.decorators.http import require_http_methods
 
 
-# Create your views here.
+def character_page(request):
+    ...
 
 
+@require_http_methods(['GET'])
 def generate_character(request):
     # TODO return a complete character as json.
 
