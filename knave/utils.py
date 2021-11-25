@@ -2,7 +2,7 @@ import random
 from knave.models import Name, Trait
 
 
-# TODO inventory generate
+# TODO armor class calculations
 class Character:
     def __init__(
             self, name: str = None, stats: dict = None, armour: int =
@@ -21,7 +21,6 @@ class Character:
 
         self.armour = armour
         self.inventory = inventory if traits is not None else self._get_random_inventory()
-        # TODO inventory
 
     def __str__(self):
         return
@@ -90,11 +89,10 @@ class Character:
                    "Грим", "Свисток", "Муз.инструмент", "Перо и чернила",
                    "Колокольчик"]
 
-        inventory = []
 
         # First table is unique, as you should obtain two random items from it
-        inventory.append(random.sample(items_1, 2))
-        inventory.append(random.sample(items_2, 1))
-        inventory.append(random.sample(items_3, 1))
+        inventory = [random.sample(items_1, 2), random.sample(items_2, 1),
+                     random.sample(items_3, 1)]
+
 
         return inventory
