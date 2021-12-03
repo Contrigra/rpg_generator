@@ -21,4 +21,8 @@ button.onclick = function (element) {
   for (key in DATA.stats) {
     document.querySelector('.' + key + '-container__bonus-output').textContent = DATA.stats[key];
   }
+
+  for (key in DATA.traits) {
+    document.querySelector('.' + key.toLowerCase() + '-container__trait-output').textContent = DATA.traits[key];
+  }
 };
