@@ -45,13 +45,12 @@
     border-right: none;
   }
 
-  .stats-container {
-    margin-top: 1.5em;
-  }
+.spreadsheet-continer {
+  display: flex;
+}
 
   .stats-container > * {
     display: flex;
-  
   }
 
   .stats-container > * > p:nth-child(3) {
@@ -61,6 +60,7 @@
   .headings-container {
     margin-top: 2em;
   }
+
 
   input[type=submit] {
     background-color: #470315;
@@ -74,13 +74,16 @@
 
   p {
     width: 200px;
-    border-right: 1px #470315 solid;
     line-height: 30px;
     margin-left: 10px;
   }
 
   .name-container, .headings-container, .hit-points-container{
     font-size: 18px;
+  }
+
+  .traits-container > * {
+    display: flex;
   }
 
 
