@@ -1,16 +1,17 @@
 import random
+from typing import Dict, List, Tuple
+
 from knave.models import Name, Trait
+from collections import namedtuple
 
 
 # TODO armor class calculations
 class Character:
     def __init__(
-            self, name: str = None, stats: dict = None, armour: int =
+            self, name: str = None, stats: dict = None, armor: int =
             None, health: int = None, traits: dict = None, inventory: list =
             None):
-        self.stats = stats
 
-        self.stats = stats
         self.stats = stats if stats is not None else self._generate_stats()
         self.name = name if name is not None else self._get_random_name()
         # 1 level characters start with from 1 to 8 hp
@@ -19,13 +20,14 @@ class Character:
             self._get_random_traits()
         # Unique stat which depends on defence items
 
-        self.armour = armour
+        self.armor = armor if armor is not None else self._get_random_armor()
         self.inventory = inventory if traits is not None else self._get_random_inventory()
 
     def __str__(self):
         return
 
-    def _generate_stats(self) -> dict:
+    @staticmethod
+    def _generate_stats() -> dict:
         """Returns a dict with stat names as a key and its value
         By the rules a stat equals the worst rolled 6-sided die out of 3"""
 
@@ -41,13 +43,15 @@ class Character:
 
         return stats
 
-    def _get_random_name(self) -> str:
+    @staticmethod
+    def _get_random_name() -> str:
 
         names = list(Name.objects.all())
         name = random.sample(names, 1)[0].name
         return name
 
-    def _get_random_traits(self) -> dict:
+    @staticmethod
+    def _get_random_traits() -> dict:
         """Returns a dict with tag names as a key and its values"""
         traits = {'Body': None, 'Face': None, 'Clothing': None, 'Skin':
             None, 'Virtue': None, 'Hair': None, 'Vice': None, 'Speech':
@@ -60,7 +64,29 @@ class Character:
 
         return traits
 
-    def _get_random_inventory(self) -> list:
+    @staticmethod
+    def _get_random_armor():
+        """Returns a list of armor items"""
+        # TODO list and calculate armor stat
+        armor_items = [('No armor', 11), ('Gambeson', 12), ('Brigandine', 13),
+                       ('Chain', 14)]
+        helmets_and_shields = [
+            (None, 0), ('Helmet', 1), ('Shield', 1), ('Helmet and Shield', 2)]
+
+        armor_dict = {"body":
+                          random.choices(armor_items, weights=[3, 11, 4, 1],
+                                         k=1)[0],
+                      "auxiliary_items":
+                          random.choices(helmets_and_shields,
+                                         weights=[13, 3, 3, 1], k=1)[0]}
+
+        armor_dict['armor_class'] = armor_dict['body'][1] + armor_dict[
+            'auxiliary_items'][1]
+
+        return armor_dict
+
+    @staticmethod
+    def _get_random_inventory() -> list:
         """Returns a list of the chracter's items from three random tables"""
 
         items_1 = [('Веревка', 50, 'фт'), 'Шкивы', ('Свечи', 5),
@@ -89,10 +115,8 @@ class Character:
                    "Грим", "Свисток", "Муз.инструмент", "Перо и чернила",
                    "Колокольчик"]
 
-
         # First table is unique, as you should obtain two random items from it
         inventory = [random.sample(items_1, 2), random.sample(items_2, 1),
                      random.sample(items_3, 1)]
-
 
         return inventory

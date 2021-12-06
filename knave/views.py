@@ -7,7 +7,8 @@ from django.views.decorators.http import require_http_methods
 
 
 def character_page(request):
-    ...
+    #TODO remove
+    return generate_character(request)
 
 
 @require_http_methods(['GET'])

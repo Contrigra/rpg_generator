@@ -9,6 +9,4 @@ class CharacterSerializer(serializers.Serializer):
     stats = DictField()
     traits = DictField()
     inventory = ListField()
-
-
-    #TODO starting inventory
+    armor = DictField()
