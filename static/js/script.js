@@ -16,7 +16,7 @@ button.onclick = function(element) {
     element.preventDefault();
 
     nameOutput.textContent = DATA.name; 
-    healthOutput.textContent = 'Макс. ' + DATA.health;
+    healthOutput.textContent = DATA.health;
 
     for (key in DATA.stats) {
         document.querySelector('.'+ key +'-container__bonus-output').textContent = DATA.stats[key];
@@ -27,8 +27,8 @@ button.onclick = function(element) {
     }
 }
 
-// make hits render with the current content
 // write api request
 // code rendering of defense stats
-
-
+// make sheet cells render on window load
+// find out how to make api call from my server (install python latest, pip install, requirements.txt, runserver)
+// find out what button do by default

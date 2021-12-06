@@ -14,7 +14,7 @@ var healthOutput = document.querySelector('.armor-container__max-output');
 button.onclick = function (element) {
   element.preventDefault();
   nameOutput.textContent = DATA.name;
-  healthOutput.textContent = 'Макс. ' + DATA.health;
+  healthOutput.textContent = DATA.health;
 
   for (key in DATA.stats) {
     document.querySelector('.' + key + '-container__bonus-output').textContent = DATA.stats[key];
@@ -23,6 +23,8 @@ button.onclick = function (element) {
   for (key in DATA.traits) {
     document.querySelector('.' + key.toLowerCase() + '-container__trait-output').textContent = DATA.traits[key];
   }
-}; // make hits render with the current content
-// write api request
+}; // write api request
 // code rendering of defense stats
+// make sheet cells render on window load
+// find out how to make api call from my server (install python latest, pip install, requirements.txt, runserver)
+// find out what button do by default
