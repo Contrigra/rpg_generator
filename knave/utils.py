@@ -65,13 +65,14 @@ class Character:
         return traits
 
     @staticmethod
-    def _get_random_armor():
+    def _get_random_armor() -> dict:
         """Returns a list of armor items"""
         # TODO list and calculate armor stat
-        armor_items = [('No armor', 11), ('Gambeson', 12), ('Brigandine', 13),
-                       ('Chain', 14)]
+        armor_items = [('Без доспеха', 11), ('Стёганая', 12), ('Бригантина',
+                                                               13),
+                       ('Кольчужная', 14)]
         helmets_and_shields = [
-            (None, 0), ('Helmet', 1), ('Shield', 1), ('Helmet and Shield', 2)]
+            (None, 0), ('Шлем', 1), ('Щит', 1), ('Шлем и щит', 2)]
 
         armor_dict = {"body":
                           random.choices(armor_items, weights=[3, 11, 4, 1],
