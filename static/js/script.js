@@ -28,7 +28,7 @@ button.onclick = function(element) {
 }
 
 // write api request
-// code rendering of defense stats
+// code rendering of defense stats (armor_class = armor defense, armor bonus = armor defense - 10, defense = bonus + 10)
 // make sheet cells render on window load
 // find out how to make api call from my server (install python latest, pip install, requirements.txt, runserver)
 // find out what button do by default
