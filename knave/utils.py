@@ -5,7 +5,7 @@ from knave.models import Name, Trait
 from collections import namedtuple
 
 
-# TODO armor class calculations
+
 class Character:
     def __init__(
             self, name: str = None, stats: dict = None, armor: int =
@@ -58,7 +58,7 @@ class Character:
                       None, 'background': None, 'misfortune': None}
 
         for key in traits.keys():
-            raw_traits = list(Trait.objects.filter(tags__name__in=[key]))
+            raw_traits = list(Trait.objects.filter(tags__slug__in=[key]))
             new_trait = random.sample(raw_traits, 1)[0].title
             traits[key] = new_trait
 

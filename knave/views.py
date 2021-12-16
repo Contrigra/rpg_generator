@@ -7,7 +7,7 @@ from django.views.decorators.http import require_http_methods
 
 
 def character_page(request):
-    #TODO remove
+    # TODO remove this placeholder as it should serve static
     return generate_character(request)
 
 
