@@ -53,9 +53,9 @@ class Character:
     @staticmethod
     def _get_random_traits() -> dict:
         """Returns a dict with tag names as a key and its values"""
-        traits = {'Body': None, 'Face': None, 'Clothing': None, 'Skin':
-            None, 'Virtue': None, 'Hair': None, 'Vice': None, 'Speech':
-                      None, 'Background': None, 'Misfortune': None}
+        traits = {'body': None, 'face': None, 'clothing': None, 'skin':
+            None, 'virtue': None, 'hair': None, 'vice': None, 'speech':
+                      None, 'background': None, 'misfortune': None}
 
         for key in traits.keys():
             raw_traits = list(Trait.objects.filter(tags__name__in=[key]))
@@ -66,8 +66,8 @@ class Character:
 
     @staticmethod
     def _get_random_armor() -> dict:
-        """Returns a list of armor items"""
-        # TODO list and calculate armor stat
+        """Returns a list of armor items and armor class number"""
+
         armor_items = [('Без доспеха', 11), ('Стёганая', 12), ('Бригантина',
                                                                13),
                        ('Кольчужная', 14)]
@@ -88,7 +88,7 @@ class Character:
 
     @staticmethod
     def _get_random_inventory() -> list:
-        """Returns a list of the chracter's items from three random tables"""
+        """Returns a list of a character's items from three random tables"""
 
         items_1 = [('Веревка', 50, 'фт'), 'Шкивы', ('Свечи', 5),
                    ('Цепь', 10, 'фт'),

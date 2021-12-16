@@ -13,7 +13,6 @@ def character_page(request):
 
 @require_http_methods(['GET'])
 def generate_character(request):
-    # TODO return a complete character as json.
 
     char = Character()
     char = CharacterSerializer(char)
