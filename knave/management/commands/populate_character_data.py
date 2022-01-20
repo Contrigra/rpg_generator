@@ -92,12 +92,12 @@ traits = {'Body':
                'Заменён', 'Ограблен', 'Подозреваемый']}
 
 
-
 class Command(BaseCommand):
     help = 'Populates DB with starting data'
 
     def handle(self, *args, **options):
-        with open('knave/management/commands/names.txt', 'r',
+        with open(r'knave\management\commands\names.txt',
+                  'r',
                   encoding='utf8') as f:
             names_list_dirty = f.readlines()
             for item in names_list_dirty:
@@ -110,4 +110,3 @@ class Command(BaseCommand):
         for item in values:
             trait = Trait.objects.get_or_create(title=item)
             trait[0].tags.add(f'{keys}')
-
