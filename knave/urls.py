@@ -9,3 +9,4 @@ urlpatterns = [
          name='create_character'),
 
 ]
+
