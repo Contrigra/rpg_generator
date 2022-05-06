@@ -1,9 +1,6 @@
 import random
-from typing import Dict, List, Tuple
 
 from knave.models import Name, Trait
-from collections import namedtuple
-
 
 
 class Character:
@@ -19,7 +16,6 @@ class Character:
         self.traits = traits if traits is not None else \
             self._get_random_traits()
         # Unique stat which depends on defence items
-
         self.armor = armor if armor is not None else self._get_random_armor()
         self.inventory = inventory if traits is not None else self._get_random_inventory()
 
