@@ -4,21 +4,25 @@
 
 const url = 'https://api.kanye.rest/';
 
-
 function getStats(event) {
     event.preventDefault();
     fetch(url)
-    .then(response => response.json())
+    .then((response) => {
+        if (!response.ok) {
+            console.log ('Network response was not OK');
+        }
+        return response.json();
+    })
     .then((data) => {
         nameOutput.textContent = data.quote; 
         healthOutput.textContent = data.quote;
-    });
+    })
+    .catch(error => console.error('There has been a problem with your fetch operation:', error))
 }
 
 const nameOutput = document.querySelector('.name-container__output');
 const button = document.querySelector('.button');
 const healthOutput = document.querySelector('.armor-container__max-output');
-
 
 
 button.addEventListener("click", getStats);
@@ -38,8 +42,8 @@ button.addEventListener("click", getStats);
 //     }
 // }
 
-// write api request
-// 
+
+// Update api request to new api structure
 // code rendering of defense stats (armor_class = armor defense, armor bonus = armor defense - 10, defense = bonus + 10)
 // make sheet cells render on window load
 

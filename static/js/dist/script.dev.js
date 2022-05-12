@@ -29,7 +29,6 @@ button.addEventListener("click", getStats); // button.onclick = function(element
 //         document.querySelector('.' + key.toLowerCase() + '-container__trait-output').textContent = data.traits[key];
 //     }
 // }
-// write api request
-// 
+// Update api request to new api structure
 // code rendering of defense stats (armor_class = armor defense, armor bonus = armor defense - 10, defense = bonus + 10)
 // make sheet cells render on window load
