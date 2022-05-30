@@ -33,6 +33,7 @@ jobs:
   deploy:
     name: Deploy to the production server
     runs-on: ubuntu-latest
+    needs: build_and_push_to_docker_hub
     steps:
 
       - name: executing remote ssh commands to deploy
@@ -44,7 +45,6 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             cd ~/code
-            sudo docker pull contrigra/rpg_generator:latest
             sudo docker-compose down
             sudo docker rmi contrigra/rpg_generator:latest
             sudo docker-compose up -d
