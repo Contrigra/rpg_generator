@@ -1,5 +1,6 @@
 from knave.models import Name, Trait
 from django.core.management.base import BaseCommand, CommandError
+import pathlib
 
 traits = {'Body':
               ['Атлетичное', 'Мускулистое', 'Тучное', 'Изящное', 'Костлявое',
@@ -96,17 +97,19 @@ class Command(BaseCommand):
     help = 'Populates DB with starting data'
 
     def handle(self, *args, **options):
-        with open(r'knave\management\commands\names.txt',
-                  'r',
-                  encoding='utf8') as f:
-            names_list_dirty = f.readlines()
-            for item in names_list_dirty:
+        f = pathlib.Path().cwd() / 'knave' / 'management' / 'commands' / 'names.txt'
+
+        with f.open() as name_list:
+            self.stdout.write('Loading names...')
+            for item in name_list:
                 item = item.strip('\n')
                 Name.objects.get_or_create(name=item)
+            self.stdout.write('Done!')
 
-    print('Loading traits:')
-    for keys, values in traits.items():
-        print(f'\n{keys}')
-        for item in values:
-            trait = Trait.objects.get_or_create(title=item)
-            trait[0].tags.add(f'{keys}')
+            self.stdout.write('\nLoading traits...')
+            for keys, values in traits.items():
+                self.stdout.write(f'{keys}')
+                for item in values:
+                    trait = Trait.objects.get_or_create(title=item)
+                    trait[0].tags.add(f'{keys}')
+            self.stdout.write('Done!')
