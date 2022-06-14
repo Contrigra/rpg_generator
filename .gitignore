@@ -4,3 +4,4 @@ db.sqlite3
 knave_https.http
 /test_db.sqlite3
 /.env
+/.pytest_cache/
