@@ -31,10 +31,22 @@ jobs:
           tags: contrigra/rpg_generator:latest
 
   deploy:
+    if: github.ref == 'refs/heads/master'
     name: Deploy to the production server
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
+      - uses: actions/checkout@v2
+      - name: Copy file via ssh password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          port: 22
+          source: "./.env,,./static"
+          target: "/home/contrigra/code/rpg_generator"
 
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
