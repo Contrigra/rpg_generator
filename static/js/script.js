@@ -1,7 +1,5 @@
 const url = 'http://84.201.140.229/knave/character/generate';
 
-// const url = 'http://127.0.0.1:8000/knave/create_character/';
-
 const nameOutput = document.querySelector('.name-container__output');
 const button = document.querySelector('.button');
 const healthOutput = document.querySelector('.armor-container__max-output');
