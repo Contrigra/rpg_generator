@@ -1,2 +1,6 @@
 __pycache__/
 rpg_generator/__pycache__
+db
+.idea
+.pytest_cache
+.vscode
