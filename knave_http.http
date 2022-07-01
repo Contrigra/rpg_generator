@@ -1,4 +1,0 @@
-GET http://localhost:8000/create_character/generate
-Accept: application/json
-
-###

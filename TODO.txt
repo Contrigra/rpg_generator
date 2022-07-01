@@ -1,5 +1,0 @@
-# TODO One test, whether a character is generated
-# TODO Github action
-# TODO Deploy on the server
-# TODO add VK bot
-# TODO add telegram bot
