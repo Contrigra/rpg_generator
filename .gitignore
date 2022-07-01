@@ -8,4 +8,4 @@ knave_https.http
 __pycache__/
 /venv/
 /db/
-
+rpg_generator/__pycache__/
