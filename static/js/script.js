@@ -1,4 +1,4 @@
-const url = 'http://84.201.140.229/knave/character/generate';
+const url = 'http://127.0.0.1:8000/knave/character/generate';
 
 
 const nameOutput = document.querySelector('.name-container__output');
