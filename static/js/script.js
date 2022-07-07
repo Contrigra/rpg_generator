@@ -1,5 +1,8 @@
 const url = 'http://84.201.140.229/knave/character/generate';
 
+// Url for localhost testing. To test: comment out the above, uncomment the below:
+// const url = `http://${location.host}/knave/character/generate`;
+
 const button = document.querySelector('.button');
 const nameOutput = document.querySelector('.name-container__output');
 const healthOutput = document.querySelector('.hit-points-container__max-output');
