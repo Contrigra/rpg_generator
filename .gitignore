@@ -9,7 +9,8 @@ __pycache__/
 /venv/
 /db/
 
+*.pyc
 rpg_generator/__pycache__/__init__.cpython-310.pyc
 rpg_generator/__pycache__/settings.cpython-310.pyc
-rpg_generator/__pycache__/__init__.cpython-310.pyc
-rpg_generator/__pycache__/settings.cpython-310.pyc
+knave/migrations
+
