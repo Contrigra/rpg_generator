@@ -40,11 +40,7 @@ function testInsertContent() {
     insertContent(dataForTest);
 }
 
-button.addEventListener("click", testInsertContent);
+window.addEventListener('load', testInsertContent);
+button.addEventListener('click', testInsertContent);
 
-
-
-
-// Update insertContent() up to new src structure
-// Make sheet cells render on window load
 
