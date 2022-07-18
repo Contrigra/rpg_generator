@@ -8,7 +8,7 @@ const armorDefenseOutput = document.querySelector('.armor-container__defense-out
 
 
 function insertContent(content) {
-    nameOutput.textContent = content.name; 
+    nameOutput.textContent = content.name;
     healthOutput.textContent = content.health;
     for (key in content.stats) {
         document.querySelector('.' + key + '-container__bonus-output').textContent = content.stats[key];
