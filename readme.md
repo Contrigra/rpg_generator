@@ -9,7 +9,7 @@ http://84.201.140.229/
 This is a simple character generator for Knave TTRPG. Currently, works only in
 Russian language
 
-## How it works?
+## How does it work?
 
 Whenever you open the page, you automatically obtain a newly generated
 character. If you want to generate a new character, press the only button on
