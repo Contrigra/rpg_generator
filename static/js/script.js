@@ -1,4 +1,4 @@
-const url = `http://${location.host}/knave/character/generate`;
+const url = `https://${location.host}/knave/character/generate`;
 
 const button = document.querySelector('.button');
 const nameOutput = document.querySelector('.name-container__output');
