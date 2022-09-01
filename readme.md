@@ -2,7 +2,7 @@
 
 ## Current Website URL
 
-http://84.201.140.229/
+https://rpgenerator.ru/
 
 ## About the project
 
