@@ -1,4 +1,12 @@
-GET http://localhost:8000/create_character/generate
+
+### SignUp
+POST http://localhost:8000/auth/signup
+Accept: application/x-www-form-urlencoded
+
+username=contritest&password=lmao123
+### @name KNAVE
+GET http://localhost:8000/knave/character/generate
 Accept: application/json
+
 
 ###
