@@ -1,0 +1,63 @@
+{% block title %}Зарегистрироваться{% endblock %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+    <main class="main container">
+    <div class="main__header">
+        <h1 class="main__title">Регистрация</h1>
+    </div>
+
+    <div class="form-container">
+        <form class="form" method="post" action="{% url 'sign_up' %}">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+            {% endif %}
+
+            <div class="form__group">
+                <label for="id_username" class="form__label">Имя
+                    пользователя</label>
+                <div class="form__field-group">
+                    <input type="text" name="username" id="id_username"
+                           class="form__input">
+                    {% if form.username.errors %}
+                        {% for error in form.username.errors %}
+                            <span class="form__error">Введите время</span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form__group">
+                <label for="id_password" class="form__label">Пароль</label>
+                <div class="form__field-group">
+                    <input type="password" name="password1" id="id_password"
+                           class="form__input">
+                    {% if form.password1.errors %}
+                        {% for error in form.password1.errors %}
+                            <span class="form__error">{{ error }}</span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="form__group">
+                <label for="id_password" class="form__label">Повторите
+                    пароль</label>
+                <div class="form__field-group">
+                    <input type="password" name="password2" id="id_password"
+                           class="form__input">
+                    {% if form.password2.errors %}
+                        {% for error in form.password2.errors %}
+                            <span class="form__error">{{ error }}</span>
+                        {% endfor %}
+
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="form__footer">
+                <button class="button button_style_blue">Создать аккаунт
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

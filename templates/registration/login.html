@@ -13,7 +13,8 @@
                     <label for="id_username" class="form__label">
                         Имя пользователя</label>
                     <div class="form__field-group">
-                        <input type="text" name="username" id="id_username" class="form__input">
+                        <input type="text" name="username" id="id_username"
+                               class="form__input">
                         <span class="form__error"></span>
                     </div>
                 </div>
@@ -21,7 +22,8 @@
                 <div class="form__group">
                     <label for="id_password" class="form__label">Пароль</label>
                     <div class="form__field-group">
-                        <input type="password" name="password" id="id_password" class="form__input">
+                        <input type="password" name="password" id="id_password"
+                               class="form__input">
 
 
                         {% if error %}
@@ -32,7 +34,8 @@
 
                 <div class="form__footer">
                     <button class="button button_style_blue">Войти</button>
-                    <a class="form__forgot-link" href="{% url 'password_reset' %}">Забыли
+                    <a class="form__forgot-link"
+                       href="{% url 'password_reset' %}">Забыли
                         пароль?</a>
                 </div>
             </form>

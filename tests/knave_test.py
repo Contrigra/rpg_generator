@@ -15,6 +15,6 @@ class TestKnave:
     @pytest.mark.django_db
     def test_character_generation_content(self, client):
         response = client.get(
-            f'http://localhost:8000/create_character/generate')
+            f'http://localhost:8000/create_character/generate/')
 
         assert isinstance(response.content, bytes)

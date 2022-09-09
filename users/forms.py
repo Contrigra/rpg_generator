@@ -4,13 +4,13 @@ from django.contrib.auth.forms import UserCreationForm
 User = get_user_model()
 
 
-# I'll use built in validations, hash creation etc, but won't render it
+# Do I even need Meta Class?
 class CreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
         # Do I need first_name here? I deleted it here,
         # just for future reference
-        fields = ("username", "email")
+        fields = ("username",)
 
     def save(self, commit=True) -> User:
         user = super().save(commit=False)
