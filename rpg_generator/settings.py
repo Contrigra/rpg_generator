@@ -15,7 +15,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = literal_eval(os.environ.get('DEBUG'))
 
-
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
 
 # Application definition
@@ -103,10 +102,11 @@ MEDIA_URL = '/media/'
 if DEBUG:
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static')
-        ]
+    ]
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+CSRF_TRUSTED_ORIGINS = ['https://rpgenerator.ru']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
