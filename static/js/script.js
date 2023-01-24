@@ -17,10 +17,16 @@ function insertContent(content) {
     for (key in content.traits) {
         document.querySelector('.' + key.toLowerCase() + '-container__trait-output').textContent = content.traits[key];
     }
+
+    // TODO сделать рендер двух частей инвентаря. Броня, если есть, и прочие предметы
+
+
+
     armorBonusOutput.textContent = content.armor.armor_class - 10;
     armorDefenseOutput.textContent = content.armor.armor_class;
 }
 
+// TODO инвентарь - броня, другие предметы
 function getData(event) {
     event.preventDefault();
     fetch(url)
