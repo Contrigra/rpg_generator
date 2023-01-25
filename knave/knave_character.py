@@ -115,7 +115,8 @@ def _generate_random_inventory() -> list:
                "Колокольчик"]
 
     # First table is unique, as you should obtain two random items from it
-    inventory = [random.sample(items_1, 2), random.sample(items_2, 1),
-                 random.sample(items_3, 1)]
+    inventory: list = random.sample(items_1, 2)
+    inventory += random.sample(items_2, 1)
+    inventory += random.sample(items_3, 1)
 
     return inventory

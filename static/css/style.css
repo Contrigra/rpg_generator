@@ -78,6 +78,10 @@
     margin-left: 10px;
   }
 
+  .items-container__item-output {
+    width: 250px;
+  }
+
   .name-container, .headings-container, .hit-points-container{
     font-size: 18px;
   }
