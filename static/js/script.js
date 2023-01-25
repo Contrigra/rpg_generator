@@ -32,7 +32,8 @@ function insertContent(content) {
 
 }
 
-// TODO сделать рендер двух частей инвентаря. Броня, если есть, и прочие предметы
+// TODO сделать рендер предметов брони и поправить стилистику
+
 function getData(event) {
     event.preventDefault();
     fetch(url)
