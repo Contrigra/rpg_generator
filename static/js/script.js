@@ -9,6 +9,7 @@ function insertContent(content) {
     const armorBonusOutput = document.querySelector('.armor-container__bonus-output');
     const armorDefenseOutput = document.querySelector('.armor-container__defense-output');
     const inventoryOutput = document.querySelector('.items-container__item-output');
+    const armorItemsOutput = document.querySelector('.armor-container__item-output');
 
     nameOutput.textContent = content.name;
     healthOutput.textContent = content.health;
@@ -24,6 +25,12 @@ function insertContent(content) {
     armorBonusOutput.textContent = content.armor.armor_class - 10;
     armorDefenseOutput.textContent = content.armor.armor_class;
 
+    armorItemsOutput.textContent = ''
+    armorItemsOutput.insertAdjacentHTML("afterbegin", `<ul>${content.armor.body}</ul>`);
+    if (content.armor.auxiliary_items[0] !== null) {
+        armorItemsOutput.insertAdjacentHTML("afterbegin", `<ul>${content.armor.auxiliary_items}</ul>`);
+    }
+
     inventoryOutput.textContent = ''
     for (let i = 0; i < content.inventory.length; i++) {
         inventoryOutput.insertAdjacentHTML("afterbegin", `<ul>${content.inventory[i]}</ul>`);
@@ -31,8 +38,6 @@ function insertContent(content) {
 
 
 }
-
-// TODO сделать рендер предметов брони и поправить стилистику
 
 function getData(event) {
     event.preventDefault();
