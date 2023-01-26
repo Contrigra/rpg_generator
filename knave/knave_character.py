@@ -59,7 +59,7 @@ def _generate_random_armor() -> dict:
         (None, 0), ('Шлем', 1), ('Щит', 1), ('Шлем и щит', 2)]
 
     armor_dict = {"body":
-                      random.choices(armor_items, weights=[3, 11, 4, 1],
+                      random.choices(armor_items, weights=[3, 11, 5, 1],
                                      k=1)[0],
                   "auxiliary_items":
                       random.choices(helmets_and_shields,
