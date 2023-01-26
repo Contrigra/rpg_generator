@@ -14,18 +14,22 @@ function insertContent(content) {
     nameOutput.textContent = content.name;
     healthOutput.textContent = content.health;
 
+    // bonus and defense render
     for (key in content.stats) {
         document.querySelector('.' + key + '-container__bonus-output').textContent = content.stats[key];
         document.querySelector('.' + key.toLowerCase() + '-container__defense-output').textContent = content.stats[key] + 10;
     }
+
+    // trait render
     for (key in content.traits) {
         document.querySelector('.' + key.toLowerCase() + '-container__trait-output').textContent = content.traits[key];
     }
 
+    // armor render
     armorBonusOutput.textContent = content.armor.armor_class - 10;
     armorDefenseOutput.textContent = content.armor.armor_class;
 
-    armorItemsOutput.textContent = ''
+    armorItemsOutput.textContent = '' // if I did not clear the content, it would save previous result and get stacked
     armorItemsOutput.insertAdjacentHTML("afterbegin", `<ul>${content.armor.body}</ul>`);
     if (content.armor.auxiliary_items[0] !== null) {
         armorItemsOutput.insertAdjacentHTML("afterbegin", `<ul>${content.armor.auxiliary_items}</ul>`);
