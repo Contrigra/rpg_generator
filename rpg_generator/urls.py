@@ -21,4 +21,5 @@ urlpatterns = [
     path('knave/', include('knave.urls')),
     path('auth/', include('users.urls')),
     path('auth/', include('django.contrib.auth.urls')),
+    path('vk/', include('vkbot.urls')),
 ]

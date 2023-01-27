@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'knave',
     'users',
     'rest_framework',
+    'vkbot',
 
 ]
 
