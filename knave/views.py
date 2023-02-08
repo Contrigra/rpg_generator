@@ -1,6 +1,5 @@
 from django.http import JsonResponse
 
-
 from knave.knave_character import generate_knave_character
 from knave.serializers import CharacterSerializer
 from django.views.decorators.http import require_http_methods
