@@ -15,6 +15,10 @@ load_dotenv()
 def vk_view(request):
     request_data = json.loads(request.read())
 
+    # guard case
+    if request_data['secret'] != os.environ.get('VK_SECRET'):
+        return HttpResponse('ok', content_type="text/plain")
+
     match request_data["type"]:
         case "confirmation":
             confirmation_code = get_callback_confirmation_code(
@@ -43,4 +47,5 @@ def vk_view(request):
 
                 return HttpResponse('ok', content_type="text/plain")
 
+    # Если нам что-то пришло, но у нас нет вариантов ответа.
     return HttpResponse('ok', content_type="text/plain")
