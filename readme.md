@@ -39,21 +39,33 @@ Data is stored in plain .txt file
 
 > python manage.py createsuperuser
 
+### vkbot app
+
+Vkbot app provides an easy way to make your own VK bot. Just provide needed
+variables in your .env file:
+
+- VK_SECRET
+- VK_ACCESS_TOKEN
+- VK_GROUP_ID
+- VK_API_VERSION 
+
+After that you may customize or use it as you wish
 
 ## TODO
 
-Project is completed for current needs, but I may add further functionality as needed or interested. 
+Project is completed for current needs, but I may add further functionality as
+needed or interested.
 
 What I think I could implement:
 
 - Proper Naming
-- Player profiles
-- Saving characters
-- Generators for other games
+- Generators for other games and needs
+- Telegram and discord bot
 
 ## Notes
 
+- My project uses nginx to serve static files, so set up a server of your
+  choice
 
-- My project uses nginx to serve static files, so set up a server of your choice
-
--  Knave TTRPG by [Questing Beast](http://questingblog.com/knave/) Under Commons Attribution 4.0 International License
+- Knave TTRPG by [Questing Beast](http://questingblog.com/knave/) Under Commons
+  Attribution 4.0 International License
