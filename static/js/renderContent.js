@@ -1,24 +1,4 @@
-const url = `${location.protocol}//${location.host}/knave/character/generate/`;
-const button = document.querySelector('.button');
-
-function getData(event) {
-    event.preventDefault();
-    fetch(url)
-        .then((response) => {
-            if (!response.ok) {
-                console.log('Network response was not OK');
-            }
-            return response.json();
-        })
-        .then(data => insertContent(data))
-        .catch(error => console.error('There has been a problem with your fetch operation:', error))
-}
-
-window.addEventListener('load', getData);
-button.addEventListener('click', getData);
-
-
-function insertContent(data) {
+export default function contentRender(data) {
     const {inventory, stats, armor, name, health, traits} = data;
 
     nameRender(name);
@@ -58,7 +38,8 @@ function armorItemRender(armor, inventory) {
 }
 
 function bonusDefenseRender(stats) {
-    for (key in stats) {
+
+    for (let key in stats) {
         document.querySelector('.' + key + '-container__bonus-output').textContent = stats[key];
         document.querySelector('.' + key.toLowerCase() + '-container__defense-output').textContent = stats[key] + 10;
     }
@@ -74,7 +55,7 @@ function armorStatRender(armor) {
 }
 
 function traitRender(traits) {
-    for (key in traits) {
+    for (let key in traits) {
         document.querySelector('.' + key.toLowerCase() + '-container__trait-output').textContent = traits[key];
     }
 }

@@ -1,128 +1,131 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Генератор персонажа РПГ</title>
-    <meta charset="utf-8">
-    <meta description="Сгенерируй персонажа для рпг за пару секунд">
-    <meta keywords="Генерация персонажа РПГ, НРИ, ДНД">
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="css/style.css">
+  <title>Генератор персонажа РПГ</title>
+  <meta charset="utf-8">
+  <meta description="Сгенерируй персонажа для рпг за пару секунд">
+  <meta keywords="Генерация персонажа РПГ, НРИ, ДНД">
+  <meta name="viewport" content="width=device-width"/>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/index.js" type="module" defer></script>
+  <script src="js/renderContent.js" type="module"></script>
 </head>
+
 <body>
 <div class="page">
-    <main class="main-container">
-        <div class="submit-container">
-            <input type="submit" class="button" value="СОЗДАТЬ ПЕРСОНАЖА">
+  <main class="main-container">
+    <div class="submit-container">
+      <input type="submit" class="button" value="СОЗДАТЬ ПЕРСОНАЖА">
+    </div>
+    <div class="name-container">
+      <p><strong>Имя</strong></p>
+      <p class="name-container__output"></p>
+    </div>
+    <div class="hit-points-container">
+      <p><strong>Хиты</strong></p>
+      <p class="hit-points-container__max-output"></p>
+    </div>
+    <div class="spreadsheet-container">
+      <div class="stats-container">
+        <div class="headings-container">
+          <p><strong>Характеристика</strong></p>
+          <p><strong>Бонус</strong></p>
+          <p><strong>Защита</strong></p>
         </div>
-        <div class="name-container">
-            <p><strong>Имя</strong></p>
-            <p class="name-container__output"></p>
+        <div class="strength-container">
+          <p><strong>СИЛ</strong>а</p>
+          <p class="strength-container__bonus-output"></p>
+          <p class="strength-container__defense-output"></p>
         </div>
-        <div class="hit-points-container">
-            <p><strong>Хиты</strong></p>
-            <p class="hit-points-container__max-output"></p>
+        <div class="dexterity-container">
+          <p><strong>ЛОВ</strong>кость</p>
+          <p class="dexterity-container__bonus-output"></p>
+          <p class="dexterity-container__defense-output"></p>
         </div>
-        <div class="spreadsheet-container">
-            <div class="stats-container">
-                <div class="headings-container">
-                    <p><strong>Характеристика</strong></p>
-                    <p><strong>Бонус</strong></p>
-                    <p><strong>Защита</strong></p>
-                </div>
-                <div class="strength-container">
-                    <p><strong>СИЛ</strong>а</p>
-                    <p class="strength-container__bonus-output"></p>
-                    <p class="strength-container__defense-output"></p>
-                </div>
-                <div class="dexterity-container">
-                    <p><strong>ЛОВ</strong>кость</p>
-                    <p class="dexterity-container__bonus-output"></p>
-                    <p class="dexterity-container__defense-output"></p>
-                </div>
-                <div class="constitution-container">
-                    <p><strong>ТЕЛ</strong>осложение</p>
-                    <p class="constitution-container__bonus-output"></p>
-                    <p class="constitution-container__defense-output"></p>
-                </div>
-                <div class="intelligence-container">
-                    <p><strong>ИНТ</strong>еллект</p>
-                    <p class="intelligence-container__bonus-output"></p>
-                    <p class="intelligence-container__defense-output"></p>
-                </div>
-                <div class="wisdom-container">
-                    <p><strong>МУД</strong>рость</p>
-                    <p class="wisdom-container__bonus-output"></p>
-                    <p class="wisdom-container__defense-output"></p>
-                </div>
-                <div class="charisma-container">
-                    <p><strong>ХАР</strong>изма</p>
-                    <p class="charisma-container__bonus-output"></p>
-                    <p class="charisma-container__defense-output"></p>
-                </div>
-                <div class="armor-container">
-                    <p><strong>Броня</strong></p>
-                    <p class="armor-container__bonus-output"></p>
-                    <p class="armor-container__defense-output"></p>
-                </div>
-            </div>
-            <div class="traits-container">
-                <div class="headings-container">
-                    <p><strong>Особенности</strong></p>
-                </div>
-                <div class="body-container">
-                    <p>Тело</p>
-                    <p class="body-container__trait-output"></p>
-                </div>
-                <div class="face-container">
-                    <p>Лицо</p>
-                    <p class="face-container__trait-output"></p>
-                </div>
-                <div class="skin-container">
-                    <p>Кожа</p>
-                    <p class="skin-container__trait-output"></p>
-                </div>
-                <div class="hair-container">
-                    <p>Волосы</p>
-                    <p class="hair-container__trait-output"></p>
-                </div>
-                <div class="clothing-container">
-                    <p>Одежда</p>
-                    <p class="clothing-container__trait-output"></p>
-                </div>
-                <div class="virtue-container">
-                    <p>Добродетель</p>
-                    <p class="virtue-container__trait-output"></p>
-                </div>
-                <div class="vice-container">
-                    <p>Порок</p>
-                    <p class="vice-container__trait-output"></p>
-                </div>
-                <div class="speech-container">
-                    <p>Речь</p>
-                    <p class="speech-container__trait-output"></p>
-                </div>
-                <div class="background-container">
-                    <p>Прошлое</p>
-                    <p class="background-container__trait-output"></p>
-                </div>
-                <div class="misfortune-container">
-                    <p>Неудача</p>
-                    <p class="misfortune-container__trait-output"></p>
-                </div>
-            </div>
+        <div class="constitution-container">
+          <p><strong>ТЕЛ</strong>осложение</p>
+          <p class="constitution-container__bonus-output"></p>
+          <p class="constitution-container__defense-output"></p>
         </div>
-        <div class="inventory-container">
-            <div class="armor-container">
-                <p><strong>Предметы Брони</strong></p>
-                <p class="armor-container__item-output"></p>
-            </div>
-            <div class="items-container">
-                <p><strong>Инвентарь</strong></p>
-                <p class="items-container__item-output"></p>
-            </div>
+        <div class="intelligence-container">
+          <p><strong>ИНТ</strong>еллект</p>
+          <p class="intelligence-container__bonus-output"></p>
+          <p class="intelligence-container__defense-output"></p>
         </div>
-    </main>
+        <div class="wisdom-container">
+          <p><strong>МУД</strong>рость</p>
+          <p class="wisdom-container__bonus-output"></p>
+          <p class="wisdom-container__defense-output"></p>
+        </div>
+        <div class="charisma-container">
+          <p><strong>ХАР</strong>изма</p>
+          <p class="charisma-container__bonus-output"></p>
+          <p class="charisma-container__defense-output"></p>
+        </div>
+        <div class="armor-container">
+          <p><strong>Броня</strong></p>
+          <p class="armor-container__bonus-output"></p>
+          <p class="armor-container__defense-output"></p>
+        </div>
+      </div>
+      <div class="traits-container">
+        <div class="headings-container">
+          <p><strong>Особенности</strong></p>
+        </div>
+        <div class="body-container">
+          <p>Тело</p>
+          <p class="body-container__trait-output"></p>
+        </div>
+        <div class="face-container">
+          <p>Лицо</p>
+          <p class="face-container__trait-output"></p>
+        </div>
+        <div class="skin-container">
+          <p>Кожа</p>
+          <p class="skin-container__trait-output"></p>
+        </div>
+        <div class="hair-container">
+          <p>Волосы</p>
+          <p class="hair-container__trait-output"></p>
+        </div>
+        <div class="clothing-container">
+          <p>Одежда</p>
+          <p class="clothing-container__trait-output"></p>
+        </div>
+        <div class="virtue-container">
+          <p>Добродетель</p>
+          <p class="virtue-container__trait-output"></p>
+        </div>
+        <div class="vice-container">
+          <p>Порок</p>
+          <p class="vice-container__trait-output"></p>
+        </div>
+        <div class="speech-container">
+          <p>Речь</p>
+          <p class="speech-container__trait-output"></p>
+        </div>
+        <div class="background-container">
+          <p>Прошлое</p>
+          <p class="background-container__trait-output"></p>
+        </div>
+        <div class="misfortune-container">
+          <p>Неудача</p>
+          <p class="misfortune-container__trait-output"></p>
+        </div>
+      </div>
+    </div>
+    <div class="inventory-container">
+      <div class="armor-container">
+        <p><strong>Предметы Брони</strong></p>
+        <p class="armor-container__item-output"></p>
+      </div>
+      <div class="items-container">
+        <p><strong>Инвентарь</strong></p>
+        <p class="items-container__item-output"></p>
+      </div>
+    </div>
+  </main>
 </div>
-<script src="js/script.js"></script>
+
 </body>
 </html>

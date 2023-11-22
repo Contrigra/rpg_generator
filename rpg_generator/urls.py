@@ -13,8 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+
+from rpg_generator import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,3 +26,8 @@ urlpatterns = [
     path('auth/', include('django.contrib.auth.urls')),
     path('vk/', include('vkbot.urls')),
 ]
+
+# Left out just in case if I need built-in server
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_URL)
