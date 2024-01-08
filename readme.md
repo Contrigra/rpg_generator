@@ -69,3 +69,8 @@ What I think I could implement:
 
 - Knave TTRPG by [Questing Beast](http://questingblog.com/knave/) Under Commons
   Attribution 4.0 International License
+
+
+## What I've learnt doing this project
+- Local storage
+  - local storage stores everything in a string format, so I need to JSON.parse() and JSON.stringify() if I need to change data

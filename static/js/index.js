@@ -1,17 +1,20 @@
 import contentRender from "./renderContent.js";
+import createCharacterDropdown from "./characterDropdown.js";
+import CharacterDataController from "./characterData.js";
 
-
-localStorage.setItem('characterArray', '[]');
-
+const characterData = new CharacterDataController();
 const button = document.querySelector('.button');
-// const characterArray =
-window.addEventListener('load', e => getData(e));
 button.addEventListener('click', e => getData(e));
+window.addEventListener('load', e => getData(e));
 
+createCharacterDropdown();
+
+
+// const name = document.querySelector('body > div > main > div.name-container > p:nth-child(1) > strong')
+// name.textContent = 'reee'
 
 function getData(event) {
-    const url = `${location.protocol}//${location.host}/knave/character/generate/`;
-
+    const url = `${location.protocol}//127.0.0.1:8000/knave/character/generate/`;
     event.preventDefault();
     fetch(url)
         .then((response) => {
@@ -20,22 +23,8 @@ function getData(event) {
             }
             return response.json();
         })
-        .then(data => saveData(data))
+        .then(data => characterData.saveCharacter(data))
         .then(data => contentRender(data))
         .catch(error => console.error('There has been a problem with your fetch operation:', error))
 }
 
-function saveData(data) {
-    const characterArray = JSON.parse(localStorage.getItem('characterArray'));
-    // store no more than 10 last characters
-    if (characterArray.length === 10) {
-        characterArray.shift()
-    }
-    characterArray.push(data);
-    localStorage.setItem('characterArray', JSON.stringify(characterArray));
-    return data
-}
-
-function createDropDown() {
-
-}

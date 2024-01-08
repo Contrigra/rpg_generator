@@ -31,3 +31,8 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,
                           document_root=settings.STATIC_URL)
+
+# if settings.DEBUG:
+#     urlpatterns += [
+#         re_path(r"^static/(?P<path>.*)$", views.serve),
+#     ]

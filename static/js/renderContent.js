@@ -1,4 +1,4 @@
-export default function contentRender(data) {
+﻿export default function contentRender(data) {
     const {inventory, stats, armor, name, health, traits} = data;
 
     nameRender(name);
@@ -9,6 +9,7 @@ export default function contentRender(data) {
     armorItemRender(armor, inventory);
 
 }
+
 
 function nameRender(name) {
     const nameOutput = document.querySelector('.name-container__output');

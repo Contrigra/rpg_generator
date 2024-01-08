@@ -4,65 +4,65 @@
     font-family: "VollkornSC";
     src: url("../fonts/VollkornSC-Bold-700.ttf") format('truetype');
     font-style: normal;
-    font-weight: 700; 
-  }
-  
-  @font-face {
+    font-weight: 700;
+}
+
+@font-face {
     font-family: "VollkornSC";
     src: url("../fonts/VollkornSC-Regular-400.ttf") format('truetype');
     font-style: normal;
     font-weight: 400;
-  }
+}
 
-  body {
-      font-family: "VollkornSC";
-      font-weight: 400;
-      color: #470315;
-      background-color: #FFFBEB;
-      padding: 30px;
-  }
+body {
+    font-family: "VollkornSC";
+    font-weight: 400;
+    color: #470315;
+    background-color: #FFFBEB;
+    padding: 30px;
+}
 
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-
-  .name-container {
-    display: flex;
-    margin-top: 1.5em;
-  }
-
-  .hit-points-container {
-    display: flex;
-  }
-
-  .name-container > p:nth-child(2) {
-    border-right: none;
-  }
-
-  .hit-points-container > p:nth-child(2) {
-    border-right: none;
-  }
-
-.spreadsheet-container {
-  display: flex;
 }
 
-  .stats-container > * {
+.name-container {
     display: flex;
-  }
+    margin-top: 1.5em;
+}
 
-  .stats-container > * > p:nth-child(3) {
+.hit-points-container {
+    display: flex;
+}
+
+.name-container > p:nth-child(2) {
     border-right: none;
-  }
+}
 
-  .headings-container {
+.hit-points-container > p:nth-child(2) {
+    border-right: none;
+}
+
+.spreadsheet-container {
+    display: flex;
+}
+
+.stats-container > * {
+    display: flex;
+}
+
+.stats-container > * > p:nth-child(3) {
+    border-right: none;
+}
+
+.headings-container {
     margin-top: 2em;
-  }
+}
 
 
-  input[type=submit] {
+input[type=submit] {
     background-color: #470315;
     color: #FFFBEB;
     border-color: #470315;
@@ -70,27 +70,57 @@
     height: 40px;
     outline: 0;
     border-radius: 5px;
-  }
+}
 
-  p {
+p {
     width: 200px;
     line-height: 30px;
     margin-left: 10px;
-  }
+}
 
-  .items-container__item-output {
+.items-container__item-output {
     width: 250px;
-  }
+}
 
-  .name-container, .headings-container, .hit-points-container{
+.name-container, .headings-container, .hit-points-container {
     font-size: 18px;
-  }
+}
 
-  .traits-container > * {
+.traits-container > * {
     display: flex;
-  }
+}
 
+.character-control-container {
+    display: flex;
 
+}
 
+.character-dropdown-button {
+    margin-left: 4rem;
+    text-align: center;
+    height: 40px;
+    padding: 12px;
+    width: 10rem;
+    border: 1px solid #470315;
+    border-radius: 8px;
+    background-color: wheat;
+}
 
-  
+.dropdown-reveal-container {
+    margin-top: 10px;
+    position: absolute;
+    z-index: 2;
+}
+
+/* подобрать размер */
+.character-div-item {
+    text-align: left;
+    height: 40px;
+    width: 10rem;
+    padding: 12px;
+    background-color: wheat;
+    border: 1px solid #470315;
+    border-radius: 8px;
+    margin: 1px;
+
+}
