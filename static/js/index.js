@@ -1,17 +1,20 @@
 import contentRender from "./renderContent.js";
-import createCharacterDropdown from "./characterDropdown.js";
+import createCharacterDropdown, {toggleDropdown} from "./characterDropdown.js";
 import CharacterDataController from "./characterData.js";
 
 const characterData = new CharacterDataController();
 const button = document.querySelector('.button');
-button.addEventListener('click', e => getData(e));
+button.addEventListener('click', e => {
+    const dropdownItemContainer = document.querySelector('.dropdown-reveal-container');
+    // hide dropdown if it's revealed on new character button press.
+    if (dropdownItemContainer.classList.contains('revealed')) {
+        toggleDropdown()
+    }
+    getData(e)
+});
 window.addEventListener('load', e => getData(e));
 
 createCharacterDropdown();
-
-
-// const name = document.querySelector('body > div > main > div.name-container > p:nth-child(1) > strong')
-// name.textContent = 'reee'
 
 function getData(event) {
     const url = `${location.protocol}//127.0.0.1:8000/knave/character/generate/`;

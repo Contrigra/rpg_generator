@@ -108,8 +108,9 @@ p {
 
 .dropdown-reveal-container {
     margin-top: 10px;
+    margin-left: -14px;
     position: absolute;
-    z-index: 2;
+
 }
 
 /* подобрать размер */
