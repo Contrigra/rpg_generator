@@ -18,6 +18,7 @@ export default class CharacterDataController {
         return data
     }
 
+    // for future use
     switchCharacter(data) {
         this.currentCharacter = data
         contentRender(data)

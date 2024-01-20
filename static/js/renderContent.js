@@ -39,12 +39,10 @@ function armorItemRender(armor, inventory) {
 }
 
 function bonusDefenseRender(stats) {
-
     for (let key in stats) {
         document.querySelector('.' + key + '-container__bonus-output').textContent = stats[key];
         document.querySelector('.' + key.toLowerCase() + '-container__defense-output').textContent = stats[key] + 10;
     }
-
 }
 
 function armorStatRender(armor) {
